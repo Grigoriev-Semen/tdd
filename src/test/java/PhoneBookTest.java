@@ -18,4 +18,11 @@ public class PhoneBookTest {
     public void testAdd() {
         assertEquals(phoneBook.add("Bob", "969-456-55-65"),1);
     }
+
+    @DisplayName("Найти имя по номеруа.")
+    @Test
+    public void testFindByNumber() {
+        phoneBook.add("Bob", "969-456-55-65");
+        assertEquals(phoneBook.findByNumber("969-456-55-65"),"Bob");
+    }
 }
