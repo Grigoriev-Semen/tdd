@@ -17,12 +17,16 @@ public class PhoneBook {
         if (!phoneBookByName.containsKey(name)) {
             phoneBookByName.put(name, numberPhone);
             phoneBookByNumber.put(numberPhone, name);
-            return (phoneBookByName.size() + phoneBookByNumber.size())/2;
+            return (phoneBookByName.size() + phoneBookByNumber.size()) / 2;
         }
         return 0;
     }
 
-    public String findByNumber (String numberPhone) {
+    public String findByNumber(String numberPhone) {
         return phoneBookByNumber.get(numberPhone);
+    }
+
+    public String findByName(String name) {
+        return null;
     }
 }

@@ -9,20 +9,27 @@ public class PhoneBookTest {
     private static PhoneBook phoneBook;
 
     @BeforeEach
-    public void init(){
+    public void init() {
         phoneBook = new PhoneBook();
     }
 
     @DisplayName("Проверка успешного добавления контакта.")
     @Test
     public void testAdd() {
-        assertEquals(phoneBook.add("Bob", "969-456-55-65"),1);
+        assertEquals(phoneBook.add("Bob", "969-456-55-65"), 1);
     }
 
-    @DisplayName("Найти имя по номеруа.")
+    @DisplayName("Найти имя по номеру.")
     @Test
     public void testFindByNumber() {
         phoneBook.add("Bob", "969-456-55-65");
-        assertEquals(phoneBook.findByNumber("969-456-55-65"),"Bob");
+        assertEquals(phoneBook.findByNumber("969-456-55-65"), "Bob");
+    }
+
+    @DisplayName("Найти номер по имени.")
+    @Test
+    public void testFindByName() {
+        phoneBook.add("Bob", "969-456-55-65");
+        assertEquals(phoneBook.findByName("Bob"), "969-456-55-65");
     }
 }
