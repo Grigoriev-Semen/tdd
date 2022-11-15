@@ -23,6 +23,6 @@ public class PhoneBook {
     }
 
     public String findByNumber (String numberPhone) {
-        return null;
+        return phoneBookByNumber.get(numberPhone);
     }
 }
